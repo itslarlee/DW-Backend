@@ -1,0 +1,33 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo restaurante
+POST {{host}}/api/restaurants
+Content-Type: application/json
+
+{
+    "code": "R001",
+    "name": "La buena mesa",
+    "address": "Calle Falsa 123",
+    "clientCapacity": 50,
+    "phoneNumber": "123456789"
+}
+
+### Obtener todos los restaurantes
+GET {{host}}/api/restaurants
+
+### Obtener un restaurante por código
+GET {{host}}/api/restaurants/R001
+
+### Actualizar un restaurante por código
+PUT {{host}}/api/restaurants/R001
+Content-Type: application/json
+
+{
+    "name": "La mesa grande",
+    "address": "Calle Verdadera 456",
+    "clientCapacity": 60,
+    "phoneNumber": "987654321"
+}
+
+### Eliminar un restaurante por código
+DELETE {{host}}/api/restaurants/R001

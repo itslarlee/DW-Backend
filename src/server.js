@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import usersRoutes from "./routers/users.routes.js";
+import restaurantsRoutes from "./routers/restaurants.routes.js";
 import cors from "cors";
 
 const app = express();
@@ -19,5 +20,6 @@ app.use(express.json());
 
 
 app.use("/api/users", usersRoutes);
+app.use("/api/restaurants", restaurantsRoutes);
 
 export default app;
