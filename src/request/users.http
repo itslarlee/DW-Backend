@@ -1,0 +1,30 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo usuario
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+    "name": "Juan",
+    "lastName": "Perez",
+    "role": "admin"
+}
+
+### Obtener todos los usuarios
+GET {{host}}/api/users
+
+### Obtener un usuario por ID
+GET {{host}}/api/users/65de91346913506da9dd485e
+
+### Actualizar un usuario por ID
+PUT {{host}}/api/users/65de91346913506da9dd485e
+Content-Type: application/json
+
+{
+    "name": "Juan actualizado",
+    "lastName": "Perez",
+    "role": "user"
+}
+
+### Eliminar un usuario por ID
+DELETE {{host}}/api/users/65de91346913506da9dd485e
