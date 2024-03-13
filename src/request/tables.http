@@ -1,0 +1,28 @@
+@host = http://localhost:8082
+
+### Agregar una nueva mesa
+POST {{host}}/api/tables
+Content-Type: application/json
+
+{
+    "code": "TB001",
+    "name": "Mesa Principal",
+    "number": 1,
+    "numberOfChairs": 4,
+    "restaurant": "Restaurante Central"
+}
+
+### Obtener todas las mesas
+GET {{host}}/api/tables
+
+### Actualizar una mesa por código
+PUT {{host}}/api/tables/TB001
+Content-Type: application/json
+
+{
+    "name": "Mesa VIP",
+    "numberOfChairs": 6
+}
+
+### Eliminar una mesa por código
+DELETE {{host}}/api/tables/TB001

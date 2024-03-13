@@ -1,0 +1,24 @@
+@host = http://localhost:8082
+
+### Agregar una nueva nacionalidad de vino
+POST {{host}}/api/wineNationalities
+Content-Type: application/json
+
+{
+    "code": "WN001",
+    "country": "Francia"
+}
+
+### Obtener todas las nacionalidades de vino
+GET {{host}}/api/wineNationalities
+
+### Actualizar una nacionalidad de vino por código
+PUT {{host}}/api/wineNationalities/WN001
+Content-Type: application/json
+
+{
+    "country": "Italia"
+}
+
+### Eliminar una nacionalidad de vino por código
+DELETE {{host}}/api/wineNationalities/WN001

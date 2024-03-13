@@ -1,0 +1,24 @@
+@host = http://localhost:8082
+
+### Agregar una nueva marca de vino
+POST {{host}}/api/wineBrands
+Content-Type: application/json
+
+{
+    "code": "WB001",
+    "name": "Dom Pérignon"
+}
+
+### Obtener todas las marcas de vino
+GET {{host}}/api/wineBrands
+
+### Actualizar una marca de vino por código
+PUT {{host}}/api/wineBrands/WB001
+Content-Type: application/json
+
+{
+    "name": "Dom Pérignon Updated"
+}
+
+### Eliminar una marca de vino por código
+DELETE {{host}}/api/wineBrands/WB001

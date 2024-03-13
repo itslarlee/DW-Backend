@@ -1,0 +1,17 @@
+@host = http://localhost:8082
+
+### Agregar una nueva soda
+POST {{host}}/api/sodas
+Content-Type: application/json
+
+{
+    "code": "SD001",
+    "name": "Coca-Cola Clásica",
+    "price": 1.0,
+    "ingredients": ["Agua carbonatada", "Azúcar", "Color caramelo", "Ácido fosfórico", "Aromatizantes naturales"],
+    "nationality": "Estadounidense",
+    "description": "Refrescante bebida carbonatada con un distintivo sabor.",
+    "brand": "Coca-Cola",
+    "restaurant": "Restaurante XYZ",
+    "picture": "url_de_la_imagen"
+}

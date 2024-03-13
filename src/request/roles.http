@@ -1,0 +1,26 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo rol
+POST {{host}}/api/roles
+Content-Type: application/json
+
+{
+    "code": "R001",
+    "name": "Administrator",
+    "description": "System administrator with full access",
+    "type": "internal"
+}
+
+### Obtener todos los roles
+GET {{host}}/api/roles
+
+### Actualizar un rol por código
+PUT {{host}}/api/roles/R001
+Content-Type: application/json
+
+{
+    "description": "Updated description for Administrator"
+}
+
+### Eliminar un rol por código
+DELETE {{host}}/api/roles/R001

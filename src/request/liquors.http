@@ -1,0 +1,37 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo licor
+POST {{host}}/api/liquors
+Content-Type: application/json
+
+{
+    "code": "LQ001",
+    "name": "Whisky Escocés",
+    "price": 50,
+    "priceUnit": "copa",
+    "priceBottle": 500,
+    "ingredients": ["Cebada malteada"],
+    "nationality": "Escocia",
+    "description": "Un whisky añejo de 12 años, con notas de turba y madera.",
+    "brand": "Glenmorangie",
+    "restaurant": "El Buen Beber",
+    "picture": "url_a_la_imagen"
+}
+
+### Obtener todos los licores
+GET {{host}}/api/liquors
+
+### Obtener un licor por código
+GET {{host}}/api/liquors/LQ001
+
+### Actualizar un licor por código
+PUT {{host}}/api/liquors/LQ001
+Content-Type: application/json
+
+{
+    "price": 55,
+    "priceBottle": 550
+}
+
+### Eliminar un licor por código
+DELETE {{host}}/api/liquors/LQ001

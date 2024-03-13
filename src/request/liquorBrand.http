@@ -1,0 +1,27 @@
+@host = http://localhost:8082
+
+### Agregar una nueva marca de licor
+POST {{host}}/api/liquorBrands
+Content-Type: application/json
+
+{
+    "code": "LB001",
+    "name": "Johnnie Walker"
+}
+
+### Obtener todas las marcas de licor
+GET {{host}}/api/liquorBrands
+
+### Obtener una marca de licor por código
+GET {{host}}/api/liquorBrands/LB001
+
+### Actualizar una marca de licor por código
+PUT {{host}}/api/liquorBrands/LB001
+Content-Type: application/json
+
+{
+    "name": "Johnnie Walker Updated"
+}
+
+### Eliminar una marca de licor por código
+DELETE {{host}}/api/liquorBrands/LB001

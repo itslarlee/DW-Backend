@@ -1,0 +1,28 @@
+@host = http://localhost:8082
+
+### Agregar una nueva especialidad
+POST {{host}}/api/specialties
+Content-Type: application/json
+
+{
+    "code": "SP001",
+    "name": "Vegan Delight",
+    "ingredients": ["Tofu", "Mushroom", "Avocado", "Spinach"],
+    "price": 15.99,
+    "details": "A hearty meal for vegans."
+}
+
+### Obtener todas las especialidades
+GET {{host}}/api/specialties
+
+### Actualizar una especialidad por código
+PUT {{host}}/api/specialties/SP001
+Content-Type: application/json
+
+{
+    "price": 16.99,
+    "details": "Now includes organic spinach!"
+}
+
+### Eliminar una especialidad por código
+DELETE {{host}}/api/specialties/SP001

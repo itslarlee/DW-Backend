@@ -1,0 +1,36 @@
+@host = http://localhost:8082
+
+### Agregar una nueva bebida fría
+POST {{host}}/api/coldDrinks
+Content-Type: application/json
+
+{
+    "code": "CD001",
+    "name": "Limonada natural",
+    "price": 1.5,
+    "ingredients": ["Agua", "Limón", "Azúcar"],
+    "description": "Refrescante limonada natural, perfecta para los días calurosos.",
+    "restaurant": "Restaurante La Brisa",
+    "picture": "url_a_la_imagen"
+}
+
+### Obtener todas las bebidas frías
+GET {{host}}/api/coldDrinks
+
+### Obtener una bebida fría por código
+GET {{host}}/api/coldDrinks/CD001
+
+### Actualizar una bebida fría por código
+PUT {{host}}/api/coldDrinks/CD001
+Content-Type: application/json
+
+{
+    "name": "Limonada con menta",
+    "ingredients": ["Agua", "Limón", "Azúcar", "Hojas de menta"],
+    "description": "Limonada natural con un toque de menta fresca.",
+    "restaurant": "Restaurante La Brisa",
+    "picture": "nueva_url_a_la_imagen"
+}
+
+### Eliminar una bebida fría por código
+DELETE {{host}}/api/coldDrinks/CD001

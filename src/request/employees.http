@@ -1,0 +1,34 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo empleado
+POST {{host}}/api/employees
+Content-Type: application/json
+
+{
+    "code": "E001",
+    "id": "12345678",
+    "name": "Juan",
+    "nationality": "Costa Rican",
+    "picture": "url_to_picture",
+    "lastName": "Perez",
+    "secondLastName": "Lopez",
+    "primaryPhoneNumber": "88888888",
+    "secondaryPhoneNumber": "77777777",
+    "nameOfRole": "Waiter",
+    "nameOfRestaurant": "Tropical Breeze"
+}
+
+### Obtener todos los empleados
+GET {{host}}/api/employees
+
+### Actualizar un empleado por código
+PUT {{host}}/api/employees/E001
+Content-Type: application/json
+
+{
+    "name": "Juan Updated",
+    "secondaryPhoneNumber": "66666666"
+}
+
+### Eliminar un empleado por código
+DELETE {{host}}/api/employees/E001

@@ -1,0 +1,37 @@
+@host = http://localhost:8082
+
+### Agregar una nueva bebida caliente
+POST {{host}}/api/hotDrinks
+Content-Type: application/json
+
+{
+    "code": "HD001",
+    "name": "Café americano",
+    "price": 2.5,
+    "ingredients": ["Agua", "Café molido"],
+    "description": "Un clásico café americano, perfecto para cualquier momento del día.",
+    "restaurant": "Café del Sol",
+    "picture": "url/a/la/imagen/del/cafe/americano.jpg"
+}
+
+### Obtener todas las bebidas calientes
+GET {{host}}/api/hotDrinks
+
+### Obtener una bebida caliente por código
+GET {{host}}/api/hotDrinks/HD001
+
+### Actualizar una bebida caliente por código
+PUT {{host}}/api/hotDrinks/HD001
+Content-Type: application/json
+
+{
+    "name": "Café americano grande",
+    "price": 3,
+    "ingredients": ["Agua", "Café molido", "Más café molido"],
+    "description": "Una versión más grande de nuestro clásico café americano.",
+    "restaurant": "Café del Sol",
+    "picture": "url/a/la/nueva/imagen/del/cafe/americano.jpg"
+}
+
+### Eliminar una bebida caliente por código
+DELETE {{host}}/api/hotDrinks/HD001

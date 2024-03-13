@@ -1,0 +1,27 @@
+@host = http://localhost:8082
+
+### Agregar una nueva nacionalidad de soda
+POST {{host}}/api/sodaNationalities
+Content-Type: application/json
+
+{
+    "code": "NA001",
+    "country": "Estados Unidos"
+}
+
+### Obtener todas las nacionalidades de soda
+GET {{host}}/api/sodaNationalities
+
+### Obtener una nacionalidad de soda por código
+GET {{host}}/api/sodaNationalities/NA001
+
+### Actualizar una nacionalidad de soda por código
+PUT {{host}}/api/sodaNationalities/NA001
+Content-Type: application/json
+
+{
+    "country": "México"
+}
+
+### Eliminar una nacionalidad de soda por código
+DELETE {{host}}/api/sodaNationalities/NA001

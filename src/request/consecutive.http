@@ -1,0 +1,28 @@
+@host = http://localhost:8082
+
+### Agregar un nuevo consecutivo
+POST {{host}}/api/consecutives
+Content-Type: application/json
+
+{
+    "code": "CN001",
+    "type": "Invoice",
+    "description": "Invoice numbering",
+    "consecutiveValue": 100,
+    "hasPrefix": true
+}
+
+### Obtener todos los consecutivos
+GET {{host}}/api/consecutives
+
+### Actualizar un consecutivo por código
+PUT {{host}}/api/consecutives/CN001
+Content-Type: application/json
+
+{
+    "consecutiveValue": 101,
+    "description": "Updated invoice numbering"
+}
+
+### Eliminar un consecutivo por código
+DELETE {{host}}/api/consecutives/CN001

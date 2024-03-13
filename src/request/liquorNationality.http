@@ -1,0 +1,27 @@
+@host = http://localhost:8082
+
+### Agregar una nueva nacionalidad de licor
+POST {{host}}/api/liquorNationalities
+Content-Type: application/json
+
+{
+    "code": "LN001",
+    "country": "Escocia"
+}
+
+### Obtener todas las nacionalidades de licor
+GET {{host}}/api/liquorNationalities
+
+### Obtener una nacionalidad de licor por código
+GET {{host}}/api/liquorNationalities/LN001
+
+### Actualizar una nacionalidad de licor por código
+PUT {{host}}/api/liquorNationalities/LN001
+Content-Type: application/json
+
+{
+    "country": "Japón"
+}
+
+### Eliminar una nacionalidad de licor por código
+DELETE {{host}}/api/liquorNationalities/LN001

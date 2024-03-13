@@ -1,0 +1,24 @@
+@host = http://localhost:8082
+
+### Agregar una nueva marca de soda
+POST {{host}}/api/sodaBrand
+Content-Type: application/json
+
+{
+    "code": "SB001",
+    "name": "Coca-Cola"
+}
+
+### Obtener todas las marcas de soda
+GET {{host}}/api/sodaBrand
+
+### Actualizar una marca de soda por código
+PUT {{host}}/api/sodaBrand/SB001
+Content-Type: application/json
+
+{
+    "name": "Pepsi"
+}
+
+### Eliminar una marca de soda por código
+DELETE {{host}}/api/sodaBrand/SB001
